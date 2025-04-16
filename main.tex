@@ -1,0 +1,400 @@
+\documentclass[12pt,a4paper,table]{report}
+\usepackage[utf8]{inputenc}
+
+\usepackage{indentfirst}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{setspace}
+\usepackage{pdfpages}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{tcolorbox}
+\usepackage{diagbox}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguages{french, arabic}
+
+
+
+
+\usepackage{acronym}
+% Configure ToC to show sections but not subsections
+\setcounter{tocdepth}{1}
+% Prevent hyphenation
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-2.5pt}
+\setmainfont{Garamond}[
+    Extension = .otf,
+    Path = ./font/,
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+    ItalicFont = *-Italic,
+    BoldItalicFont = *-BoldItalic,
+]
+\newfontfamily\arabicfont[Script=Arabic]{Amiri}
+%\setmainfont{Amiri}[
+%Extension = .ttf,
+%Path = ./font/,
+%UprightFont = *-Regular,
+%BoldFont = *-Bold,
+%ItalicFont = *-Italic,
+%BoldItalicFont = *-BoldItalic,
+%]
+
+\geometry{
+top=2.5cm,
+bottom=2.5cm,
+left=2.5cm,
+right=2cm,
+bindingoffset=1cm
+}
+
+% Package setup
+\titleformat{\chapter}[display]
+{\normalfont\LARGE\bfseries\centering}
+{}
+{20pt}
+{}
+[\vspace{1em}\titlerule]
+
+\titleformat{\section}[block]
+{\normalfont\Large\bfseries}
+{\thesection}
+{1em}
+{}
+
+\titleformat{\subsection}[hang]
+{\normalfont\large\bfseries}
+{\hspace*{2em}\thesubsection}
+{1em}
+{}
+[\vspace{0.5em}]
+
+\titleformat{\subsubsection}[hang]
+{\normalfont\normalsize\bfseries}
+{\hspace*{4em}\thesubsubsection}
+{1em}
+{}
+[\vspace{0.5em}]
+
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\listtablename}{List of Tables}
+\renewcommand{\scdefault}{sc}
+\renewcommand{\bfdefault}{b}
+%%
+
+%%
+\onehalfspacing
+\usepackage{fancyhdr}
+\usepackage{lastpage} % For getting last page number
+% Headers and footers
+% Headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ISET of Zaghouan}
+\rhead{June 2024}
+\lfoot{Ouchari Ibrahim}
+\rfoot{Page \thepage\ }
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrulewidth}{1pt}
+% Command to display chapter content summary
+% Define a tcolorbox style for the plan
+\tcbset{
+mybox/.style={
+colframe=black,
+colback=white,
+sharp corners,
+boxrule=0.5mm,
+width=\textwidth,
+center title
+}
+}
+
+%================= Defining Custom Colors =================%
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{datatool}% http://ctan.org/pkg/datatool
+\newcommand{\sortitem}[2][\relax]{%
+\DTLnewrow{list}% Create a new entry
+\DTLnewdbentry{list}{sortlabel}{#1}
+\DTLnewdbentry{list}{description}{
+\begin{minipage}[l]{0.1\columnwidth}
+~\textbf{#1}
+\end{minipage}
+\begin{minipage}[l]{0.05\columnwidth}
+\textbf{=}
+\end{minipage}
+\begin{minipage}[l]{0.85\columnwidth}
+#2
+\end{minipage}
+}% Add entry description
+}
+\newenvironment{acronyms}{%
+\DTLifdbexists{list}{\DTLcleardb{list}}{\DTLnewdb{list}}% Create new/discard old list
+}{%
+\DTLsort{sortlabel}{list}% Sort list
+\begin{itemize}%
+\DTLforeach*{list}{\theDesc=description}{%
+\item \theDesc}% Print each item
+\end{itemize}%
+}
+
+%================= configuring minitoc ==================%
+\usepackage[english]{minitoc}
+\mtcsettitle{minitoc}{Plan}
+\setcounter{minitocdepth}{1}
+
+\mtcsetoffset{minitoc}{-1.0em}
+
+%=============== Customizing Chapters Names ===============%
+
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1.2ex \hfill \kern \z@}
+
+\def\@makechapterhead#1{%
+    \vspace*{30\p@}%
+    {\parindent \z@ \centering \reset@font
+    \thickhrulefill\quad
+    \scshape\bfseries\textit{\@chapapp{} \thechapter}
+    \quad \thickhrulefill
+    \par\nobreak
+    \vspace*{10\p@}%
+    \interlinepenalty\@M
+    \hrule
+    \vspace*{10\p@}%
+    \Huge \bfseries #1 \par\nobreak
+    \par
+    \vspace*{10\p@}%
+    \hrule
+    \vskip 50\p@
+    }
+}
+
+\def\@makeschapterhead#1{%
+    \hbox{\huge\textbf{#1}}%
+    \par\vskip 1cm
+}
+\makeatother
+%%%%%%%%%%%%
+
+%%%%%%%%%%%
+\usepackage{csquotes}
+\PassOptionsToPackage{%
+backend=biber, %instead of bibtex
+%backend=bibtex8,bibencoding=ascii,%
+%language=autobib,%
+language=auto,
+%language=french,
+%autocite=inline,
+%style=numeric-comp,%
+%style=authoryear-comp, % Author 1999, 2010
+%style=authoryear,%
+%style=alphabetic,%
+style=ieee,
+%bibstyle=authoryear,dashed=false, % dashed: substitute rep. author with ---
+%sorting=nty, % name, year, title
+sorting=none, % name, year, title
+%maxbibnames=3, % default: 3, et al.
+%backref=true,%
+%hyperref=true,
+%natbib=true % natbib compatibility mode (\citep and \citet still work)
+}{biblatex}
+
+%\renewcommand*{\bibfont}{\small\raggedright}
+%\DefineBibliographyExtras{french}{\renewcommand*\mkbibnamelast[1]{#1}}
+
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{biblio.bib}
+\DefineBibliographyStrings{english}{%
+bibliography = {Webography},
+}
+\usepackage{changepage} % For the adjustwidth environment
+
+% % Redefine section and subsection with titlesec
+% \titleformat{\section}
+% {\normalfont\Large\bfseries}{\thesection}{1em}{}
+% \titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+
+% \titleformat{\subsection}
+% {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+% \titlespacing*{\subsection}{0pt}{\baselineskip}{\baselineskip}
+
+% % Redefine \section and \subsection to indent the following paragraph
+% \let\oldsection\section
+% \renewcommand{\section}[1]{\oldsection{#1}\par\hspace{1.5em}}
+% \let\oldsubsection\subsection
+% \renewcommand{\subsection}[1]{\oldsubsection{#1}\par\hspace{2.5em}}
+
+% Redefine section and subsection with titlesec
+% Redefine \section and \subsection to indent the following paragraph
+% Redefine \section and \subsection to indent the following paragraph
+
+% Redefine section and subsection with titlesec
+% \titleformat{\section}
+% {\normalfont\Large\bfseries}{\thesection}{1em}{}
+% \titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+
+% \titleformat{\subsection}
+% {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+% \titlespacing*{\subsection}{0pt}{\baselineskip}{\baselineskip}
+
+% \let\oldsection\section
+% \renewcommand{\section}[1]{%
+% \ifx*#1%
+% \oldsection*{#1}\addcontentsline{toc}{section}{#1}\par%
+% \else%
+% \oldsection{#1}\addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}\par\hspace{1.5em}%
+% \fi%
+% }
+% \let\oldsubsection\subsection
+% \renewcommand{\subsection}[1]{%
+% \ifx*#1%
+% \oldsubsection*{#1}\addcontentsline{toc}{subsection}{#1}\par%
+% \else%
+% \oldsubsection{#1}\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}\par\hspace{2.5em}%
+% \fi%
+% }
+
+
+
+\begin{document}
+
+% Set the counters to start from 1
+\setcounter{chapter}{0}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\pagenumbering{gobble}
+% Include PDF as the first page
+\includepdf[pages={1}]{media/page_guard.pdf}
+\includepdf[pages={1}]{media/signatures.pdf}
+\setcounter{page}{1}
+% Cover Page
+\chapter*{\centering \LARGE Dedication}
+
+\vspace{1cm}
+Dedications
+I dedicate this work :
+
+To my dear mother Mouna, the most tender of women, who always made
+sacrifices to ensure I had a healthy and wonderful life. Your encouragement and love were
+always my guiding light. I hope I have lived up to the hopes you had for me and fulfilled one
+of your dreams today.
+
+To my brothers Ahmed, Radhouene and Omar for the times of happiness and companionship we have
+experienced together. Your presence and constant support have given me solace during
+moments of uncertainty. You have not only been my brothers but also a My Rock, and I
+value all the enjoyable moments and your affectionate brotherly love.
+To my Mariem and my aunt Nabila, you were the second mom and sisters figuers for me my entire life. and for that person who without him I wouldn't be able to get throught this far I am truly grateful for everything you have done for
+me. Your unwavering support is my greatest source of motivation, and I appreciate having
+you by my side.
+With love and gratitude,
+Ouchari Ibrahim
+
+\vspace{1cm}
+
+\noindent \large Ouchari Ibrahim
+\thispagestyle{empty}
+\chapter*{\centering \LARGE Acknowledgments}
+
+\vspace{1cm}
+
+I also want to express my gratitude and appreciation to \textbf{Mm. Wejden Saied} and my manager \textbf{Mr. Hatem AMMAR}.
+
+By accepting to lead this end-of-studies project, despite your numerous responsibilities, you have bestowed your trust upon me. Your open-mindedness and, above all, your interest in science make you an endless source from which every student should drink.
+
+I would like to particularly thank the members of the jury for agreeing to evaluate this dissertation. May they find in this work the expression of my respect and sincere gratitude.
+
+I would like to express my gratitude to my family, friends, and colleagues who have provided me with their moral and intellectual support throughout this work.
+
+To all those who have contributed to the completion of this work, whether directly or indirectly, please accept my heartfelt recognition and thanks.
+\vspace{1cm}
+\thispagestyle{empty}
+
+\newpage
+\dominitoc
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\listoftables
+\thispagestyle{empty}
+\newpage
+\listoffigures
+\thispagestyle{empty}
+\newpage
+\include{acronymes}
+\thispagestyle{empty}
+
+\chapter*{\centering General Introduction}
+
+\pagenumbering{arabic} % Start page numbering from here
+\addcontentsline{toc}{chapter}{General Introduction}
+
+The project highlights the rapid evolution of the digital landscape, particularly in a post-pandemic era, underscoring the increasing need for digitalization. It focuses on analyzing, designing, and developing an Odoo-based system to address initial project requirements, showcasing technology's pivotal role in modern business operations.
+
+Odoo, renowned for its robust open-source ERP \cite{erp} capabilities, offers versatile solutions tailored for efficient business management across various industries. Its user-friendly interface and flexibility empower businesses of all scales, automating processes to boost productivity and minimize redundancy. Adopting the Scrum methodology ensured effective planning, execution, and stakeholder engagement throughout project phases.
+
+This initiative aimed to leverage Odoo and Scrum methodologies to enhance software development skills and agile \cite{agile} project management expertise. Subsequent chapters outline project achievements, with an introduction and concluding remarks framing the narrative.
+
+This report is structured as follows.
+
+This report details the steps taken to complete the project, divided into five chapters.
+
+Chapter 1 introduces the project's context, including the host organization, the problem statement, and project requirements.
+
+Chapter 2 focuses on the preliminary study and identifies functional and non-functional requirements using the adopted methodology.
+
+Chapters 3 to 5 detail the design and modeling of various application entities.
+
+Chapter 6 covers the tools and environment used to complete the project.
+
+Finally, the report concludes with a summary of the main achievements.
+
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
+\include{realisation}
+\include{conclusion}
+\thispagestyle{empty}
+
+% After the conclusion, make all pages empty (no headers, footers, or page numbers)
+\pagestyle{empty}
+
+% Print bibliography and include it in the TOC
+\cleardoublepage
+\pagestyle{empty} % Ensure no headers, footers, or page numbers
+\printbibliography[heading=bibintoc]
+\thispagestyle{empty} % Apply to the current page
+
+% Include annex
+\cleardoublepage
+\pagestyle{empty} % Ensure no headers, footers, or page numbers
+\include{annex}
+\thispagestyle{empty} % Apply to the current page
+
+% Label for the last page
+\label{LastPage}
+
+
+% Abstract
+
+\includepdf[pages=-]{media/lastpage.pdf}
+\end{document}

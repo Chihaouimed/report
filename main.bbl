@@ -1,0 +1,235 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{erp}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{Enterprise Resource Planning (ERP) Information}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.gartner.com/it-glossary/erp-enterprise-resource-planning/
+      \endverb
+      \verb{url}
+      \verb https://www.gartner.com/it-glossary/erp-enterprise-resource-planning/
+      \endverb
+    \endentry
+    \entry{agile}{online}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{Agile Alliance}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.agilealliance.org/
+      \endverb
+      \verb{url}
+      \verb https://www.agilealliance.org/
+      \endverb
+    \endentry
+    \entry{scrum}{online}{}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{What is Scrum?}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.scrum.org/resources/what-is-scrum
+      \endverb
+      \verb{url}
+      \verb https://www.scrum.org/resources/what-is-scrum
+      \endverb
+    \endentry
+    \entry{uml}{online}{}{}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{Unified Modeling Language (UML)}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.uml.org/
+      \endverb
+      \verb{url}
+      \verb https://www.uml.org/
+      \endverb
+    \endentry
+    \entry{usecase}{online}{}{}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{UML Use Case Diagram}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.lucidchart.com/pages/uml-use-case-diagram
+      \endverb
+      \verb{url}
+      \verb https://www.lucidchart.com/pages/uml-use-case-diagram
+      \endverb
+    \endentry
+    \entry{classdiagram}{online}{}{}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{UML Class Diagram}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.lucidchart.com/pages/uml-class-diagram
+      \endverb
+      \verb{url}
+      \verb https://www.lucidchart.com/pages/uml-class-diagram
+      \endverb
+    \endentry
+    \entry{sequencediagram}{online}{}{}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{UML Sequence Diagram}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.lucidchart.com/pages/uml-sequence-diagram
+      \endverb
+      \verb{url}
+      \verb https://www.lucidchart.com/pages/uml-sequence-diagram
+      \endverb
+    \endentry
+    \entry{odoo}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{Odoo}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.odoo.com
+      \endverb
+      \verb{url}
+      \verb https://www.odoo.com
+      \endverb
+    \endentry
+    \entry{pycharm}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{PyCharm}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.jetbrains.com/pycharm/
+      \endverb
+      \verb{url}
+      \verb https://www.jetbrains.com/pycharm/
+      \endverb
+    \endentry
+    \entry{vscode}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{Visual Studio Code}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://code.visualstudio.com/docs
+      \endverb
+      \verb{url}
+      \verb https://code.visualstudio.com/docs
+      \endverb
+    \endentry
+    \entry{postgresql}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{PostgreSQL}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.postgresql.org
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org
+      \endverb
+    \endentry
+    \entry{drawio}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{Draw.io}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.draw.io
+      \endverb
+      \verb{url}
+      \verb https://www.draw.io
+      \endverb
+    \endentry
+    \entry{pgadmin}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{PgAdmin 4}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.pgadmin.org
+      \endverb
+      \verb{url}
+      \verb https://www.pgadmin.org
+      \endverb
+    \endentry
+    \entry{git}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{Git}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://git-scm.com
+      \endverb
+      \verb{url}
+      \verb https://git-scm.com
+      \endverb
+    \endentry
+    \entry{github}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{[Access June, 16th 2024]}
+      \field{title}{GitHub}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com
+      \endverb
+      \verb{url}
+      \verb https://github.com
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
